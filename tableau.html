@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tableaux</title>
+</head>
+
+<body>
+    <h1>les tableaux en js</h1>
+    <p>un tableau est une variable qui permet de stocker plusieurs valeurs.</p>
+
+    <P>Syntaxe : </P>
+    <pre>
+    <code>
+        <p>déclaration</p>
+       let <i>nomVariable</i> = [ <i>valeur1</i>, <i>valeur2</i>, ...];
+    </code>
+</pre>
+
+    <p>les valeurs sont entourés par des crochets <code> [] </code> et séparées par des virgules.</p>
+    <p>Un tableau peut contenir n'importe quelle type de valeur (string, number, boolean et méme des tableaux).</p>
+
+
+    <script>
+        let tableau = [5, 12, 42];
+        document.write("Le type du tableau est <mark>" + typeof tableau + "</mark><br>");
+
+        //afficher la 1ere valeur du tablleau
+        console.log(tableau[0]);
+        console.log(tableau[2]); 
+    </script>
+
+    <p>pour accéder a une valeur du tableau, on utilise les [] et l'indice (c'est-a-dire la position) de la valeur dans
+        le tableau.</p>
+    <p>Syntaxe : </p>
+    <pre>
+        <code>
+            <i>nomVariableTableau</i>[<i>indice</i>];
+        </code>
+    </pre>
+
+    <script>
+        console.log(tableau);
+        tableau[1] = 150;
+        console.log(tableau);
+
+        // connaitre la longueur du tableau : méthode length
+        console.log("le tableau contient " + tableau.length + "valeurs");
+
+        // exercice
+        let nombres = [4, 9, 12, -5, 23];
+        // affichez toutes les valeurs du tableau dans une liste HTML (<ul>) avec leur indice
+        // ex : 
+        // 0 : 4
+        // 1 : 9
+        // 2 : 12
+        // c'est javascript qui doit parcourir le tableau, vous ne devez pas écrire 5 fois document.write...
+
+        document.write("<ul>");
+        for (let indice = 0; indice < nombres.length; indice++) {
+            let str = "<li>";
+            str = str + indice + " : " + nombres[indice];
+            str += "</li>"; // str = str + "</li>";
+            document.write(str);
+        }
+
+        document.write("</ul>");
+
+
+        // remplir avec les 100 premiers nombres (du nombre 1 jusqu'a 100)
+        let nouveauTableau = [];
+
+
+        for (let i = 1; i >= 100; i++) {
+            nouveauTableau.push(i);
+        }
+
+        for (let i = 0; i < 100; i++) {
+            nouveauTableau[i] = i + 1;
+        }
+
+                        /* Affichez toutes les valeurs de nouveauTableau en utilsant la boucle FOR OF */                                                                                                                                                                   for (let nb of nouveauTableau) {
+            for (let i = 1; i <= 5; i++) {
+                document.write(nb + " ");
+            }
+            document.write("<br>")
+            let phrases = ["bonjour", "je", "m'appelle", "jean", "Cérien"];
+            /* EXO : Avec une boucle FOR OF sur le tableau phrases, affichez la phrase "bonjour, je m'appelle Jean" Cérien"
+                sur la page du navigateur dans une balise <h3> */
+
+            document.write("<h3>");
+            for (let mot of phrases) {
+                document.write(mot + " ");
+            }
+            document.write("</h3>");
+        }
+
+        // pour supprimer une valeur du tableau en connaissant son indice :
+        // tableau.splice(indice, nombre de valeurs a supprimer)
+
+        nombres.splice(2, 1);  // la 3ieme valeur du tableau 'nombres' est supprimée
+
+    </script>
+
+</body>
+
+</html>

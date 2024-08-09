@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1> les structures conditionnelles</h1>
+    <p>
+        lorsque l'on veut que du code soit excuté si une certaine condition est vrai, 
+        on va utilise une structure IF.
+    </p>
+    <P>Syntaxe :</P>
+    <pre><code>
+        if (<i>condition</i>){
+            <i>bloc d'instruction...</i>
+        }
+    </code></pre>
+    <h2> SINON</h2>
+    <p>
+        on peut definir le code qui sera exécuté si la 
+    </p>
+    <P>Syntaxe :</P>
+    <pre><code>
+        if (<i>condition</i>){
+            <i>bloc d'instruction...</i>
+        } else {
+            <i>bloc d'instruction...</i>
+        }
+    </code></pre>
+
+    <h2>opérateur de comparaison</h2>
+    <ul>
+        <li>inférieur : <code>&lt;</code></li>
+        <li>inferieur ou égal : <code>&lt;=</code></li>
+        <li>supérieur : <code>&gt;</code></li>
+        <li>supérieur ou égal : <code>&gt;=</code></li>
+        <li>égal à : <code>==</code></li>
+        <li>strictement égal : <code>===</code></li>
+        <li>différent de : <code>!=</code></li>
+        <li>strictement différent de : <code>!==</code></li>
+    </ul>
+
+    <table border="1">
+        <thead>
+            <th>
+                <td>Type</td>
+                <td>Valeur false</td>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>string</td>
+                <td>chaîne de caractère vide <code>""</code></td>
+            </tr>
+            <tr>
+                <td>number</td>
+                <td><code>0</code></td>
+            </tr>
+            <tr>
+                <td>boolean</td>
+                <td><code>false</code></td>
+            </tr>
+
+            <tr>
+                <td>null</td>
+                <td>null</td>
+            </tr>
+            <tr>
+                <td>undefined</td>
+                <td>undefined</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>OPERATEURS LOGIQUES</h2>
+    <p>Les opérateurs logiques s'utilisent avec des expressions booléennes et retourne un résultat booléen.
+         Ils sont utilisés quand on a une condition constituée de plusieurs conditions.
+    </p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>opérateur</th>
+                <th>signification</th>
+                <th>explicattion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&&</td>
+                <td>AND (ET)</td>
+                <td>lES 2 Condition doivent etre vraies en mem temps</td>
+            </tr>
+            <tr>
+                <td> || </td>
+                <td>OR (OU)</td>
+                <td>AU MOIN 1 DES 2 CONDITION DOIT ETRE VRAI</td>
+            </tr>
+            <tr>
+                <td>!</td>
+                <td>NOT (NON)</td>
+                <td>inverse une valeur booléenne</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        l'operateur NOT <code>!</code> est un opérateur <i>unaire</i></p> (c'est a dire 
+        qu'il ne s'applique qu'a 1 seul expression, contrairement aux opérateurs binaires 
+        qui ont besoin de 2 expression).
+    </p>
+
+    <h2>STRUCTURE SWITCH</h2>
+    <pre><code>
+        switch(<i>expression</i>) {
+            case <i>valeur</i>:
+            <i>bloc d'instruction 1...</i>
+            break;
+
+            case <i>valeur2</i>:
+            <i>bloc d'instruction 2...</i>
+            break;
+            ...
+
+            default:
+            <i>bloc d'instruction</i>
+
+
+        }
+    </code></pre>
+
+    <hr>
+
+    <h2>OPERATEUR TERNAIR OU IF INLINE</h2>
+    <P>
+        on peut utiliser l'opérateur ternair lorsque la valeur d'une expression
+        dépend d'une condition 
+    </P>
+    <p>Syntaxe : </p>
+    <pre>
+        <code>
+            <i>condition</i> ? <i>valeur_si_condition_vraie</i> : <i>valeur_si_condition_fausse</i>
+        </code>
+    </pre>
+
+<hr>
+
+    <script src="JS/conditions.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>le type OBJECT</title>
+</head>
+<body>
+   <h1>Les OBJETS</h1>
+   <p>Les objets sont des variables complexes comparées aux variables de type simple(string, number, boolean).</p>
+   <p>Par exemple, les tableaux sont de type <code>object</code> et permettent
+de stocker plusieurs valeurs dans une seule variable.</p>
+<p>Donc un objet peut rassembler plusieurs valeurs. Ces valeurs sont appelés des <b>
+    propriétés</b>(ou <b>attributs</b>).
+</p>
+    <p>Ces prpriétés ont un nom et une valeur, comme les variables. 
+        Mais ces variablessont liées a un objet. Les propriétéssont les 
+        caractéristique de l'objet.
+
+    </p>
+    <p>Un objet peut aussi avoir des <b>méthodess</b> : ce sont des fonction qui 
+        sont liés a un objet. Ces fonctions ne peuvent etre appelés que par l'intérmédiaire
+        d'un objet. </p>
+
+        <script>
+            // Déclaration d'un objet
+            // voiture c une variable et marque modele couleur reservoir sont des proprieté
+            let voiture = {
+                marque: "ferrari",  
+                modele:"testarossa",
+                couleur:"rouge",
+                reservoir: 0,
+                demarrer: function(){
+                    return "la voiture démarre ...";
+                },
+                remplirReservoir: function(quantité) {
+                    console.log("j'ajoute" + quantité + "litres dans mon réservoir");
+                    quantité = Number(quantité);
+                    this.reservoir += quantité; // reservoir = reservoir + quantité;
+                }
+            };
+
+            // let livre = {};
+            ecrireLigne("Ma voiture est de la marque" + voiture.marque);
+            ecrireLigne(voiture.demarrer());
+            voiture.remplirReservoir(50);
+            ecrireLigne("Réservoir : " + voiture.reservoir + "litres");
+
+            function creeVoiture(marque, modele, couleur) {
+                return{
+                    marque: marque,
+                    modele: modele,
+                    couleur: couleur,
+                    reservoir: 0,
+                    demarrer: function() {
+                    return "la voiture démarre ...";
+                },
+                remplirReservoir: function(quantité) {
+                    quantité = Number(quantité);
+                    this.reservoir += quantité; // reservoir = reservoir + quantité;
+                }
+
+                }
+            }
+            let v1 = creeVoiture("Renault", "R5", "bleu métallisé");
+            let v2 = creeVoiture("lamborghini", "diablo", "violet");
+            v1.remplirReservoir(20);
+            console.log("v1", v1);
+            console.log("v2", v2);
+        </script>
+
+        <h2>JSON</h2>
+        <P>JavaScript Objet Notation</P>
+        <p>Le format JSON utilise la notation des objets javascript pour échanger
+            des données entre différents systémes
+            (serveur, API, navigateur, application,...)
+        </p>
+        <p>La syntaxe est la suivante : </p>
+        <pre>
+            <code>
+                <i>champ1</i>: <i>valeur1</i>,
+                <i>champ2</i>: <i>valeur2</i>,
+                ...
+                <i>champN</i>: <i>valeurN</i>,
+
+            </code>
+        </pre>
+        <ul>
+            <li>il n'y a que des <i>propriétés</i>, pas de méthodess
+            (car le JSON est utilisé pour transférer des données)</li>
+            <li>Les valeurs de type string doivent etre entourées de 
+                <code> "" </code> ou <code> '' </code>
+            </li>
+            <li>
+                attention contrairement a JS, les champs doivent etre entourées de 
+                <code> "" </code> ou <code> '' </code> (pour un probléme de comatibilité
+                avec certains systémes)
+            </li>
+             
+       
+        </ul>
+</body>
+</html>
